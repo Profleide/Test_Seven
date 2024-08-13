@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choperia SevenbeerCL - Bebidas</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #ffd700; /* Cor dourada para o texto */
+            text-align: center;
+        }
+        nav {
+            background-color: #222;
+            padding: 10px;
+        }
+        nav a {
+            color: #ffd700; /* Cor dourada para os links */
+            text-decoration: none;
+            font-size: 20px;
+            margin: 0 10px;
+            transition: color 0.1s ease;
+            display: inline-block;
+            padding: 10px 0;
+        }
+        nav a:hover {
+            color: #ffea00; /* Cor amarela ao passar o mouse */
+        }
+        .menu-content img {
+            width: 80%;
+            max-width: 400px;
+            height: auto;
+            display: none;
+        }
+        .item {
+            margin: 20px;
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+        .item:hover {
+            color: #ffea00; /* Cor amarela ao passar o mouse */
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Voltar ao Menu Principal</a>
+    </nav>
+
+    <h1>Bebidas</h1>
+    <div class="menu-content">
+        <div class="item" onclick="showItem('cerveja')">
+            Cerveja - R$ 12,00
+        </div>
+        <div class="item" onclick="showItem('refrigerante')">
+            Refrigerante - R$ 8,00
+        </div>
+        <div class="item" onclick="showItem('suco')">
+            Suco - R$ 10,00
+        </div>
+
+        <!-- Imagens dos itens -->
+        <img id="cerveja" src="Chopp.jfif" alt="Cerveja">
+        <img id="refrigerante" src="link-da-imagem-refrigerante.png" alt="Refrigerante">
+        <img id="suco" src="link-da-imagem-suco.png" alt="Suco">
+    </div>
+
+    <script>
+        function showItem(itemId) {
+            // Esconde todas as imagens
+            var images = document.querySelectorAll('.menu-content img');
+            images.forEach(function(img) {
+                img.style.display = 'none';
+            });
+
+            // Mostra a imagem selecionada
+            var item = document.getElementById(itemId);
+            item.style.display = 'block';
+
+            // Esconde a imagem após 5 segundos
+            setTimeout(function() {
+                item.style.display = 'none';
+            }, 5000);
+        }
+    </script>
+
+</body>
+</html>
